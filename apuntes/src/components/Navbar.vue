@@ -10,6 +10,9 @@
             <li>
                 <router-link to="/notas">Notas</router-link>
             </li>
+            <li>
+                <router-link to="/axios">Axios</router-link>
+            </li>
         </ul>
     </nav>
 </template>
