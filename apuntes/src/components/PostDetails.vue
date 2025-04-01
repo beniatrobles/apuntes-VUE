@@ -18,4 +18,11 @@ let props = defineProps({
     background-color: beige;
     width: 300px;
 }
+
+h2{
+    font-size: 20px;
+}
+li{
+    font-size: 15px;
+}
 </style>

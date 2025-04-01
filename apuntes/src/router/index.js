@@ -3,7 +3,6 @@ import Home from '../views/Home.vue'
 import Contador from '../views/Contador.vue'
 import Notas from '../views/appNotas/appNotas.vue'
 import Axios from '../views/axios/axios.vue'
-import padre_hijo from '@/views/padre_hijo/padre_hijo.vue'
 import Padre_hijo from '@/views/padre_hijo/padre_hijo.vue'
 
 const routes = [

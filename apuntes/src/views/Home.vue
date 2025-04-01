@@ -1,11 +1,9 @@
 <template>
     <Navbar />
     <h1>Todos los ejercicios</h1>
-    <ul>
-        <li>
-            <router-link to="/notas">Notas</router-link>
-        </li>
-    </ul>
+    <h3>
+        <router-link to="/notas">Notas</router-link>
+    </h3>
     <Footer />
 </template>
 <script setup>

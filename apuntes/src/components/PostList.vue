@@ -3,13 +3,15 @@
     <div class="padre">
         <h1>Componente Padre</h1>
         <h2>Lista de Posts</h2>
-        <ul v-for="post in posts" :key="post.id">
-            <li>{{ post.title }}-{{ post.description }}</li>
-        </ul>
-        <PostDetails :posts="posts"/>
+        <div class="contenedor">
+            <PostDetails :posts="posts" />
+            <PostDetails :posts="posts" />
+            <PostDetails :posts="posts" />
+            <PostDetails :posts="posts" />
+            <PostDetails :posts="posts" />
+        </div>
     </div>
     <hr>
-
 </template>
 <script setup>
 import { ref } from 'vue';
@@ -25,7 +27,12 @@ let posts = ref([
 
 </script>
 <style>
-.padre{
+.padre {
     background-color: gray;
+}
+
+.contenedor{
+    display: flex;
+    gap: 10px;
 }
 </style>
