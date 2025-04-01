@@ -13,6 +13,9 @@
             <li>
                 <router-link to="/axios">Axios</router-link>
             </li>
+            <li>
+                <router-link to="/padre_hijo">PadreHijo</router-link>
+            </li>
         </ul>
     </nav>
 </template>
