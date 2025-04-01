@@ -9,8 +9,7 @@
 
 <style>
 .footerBody {
-    background-color: #333;
-    position: fixed;  /* Fija el footer al fondo */
+    background-color: #333;  /* Fija el footer al fondo */
     bottom: 0;        /* Colócalo en la parte inferior */
     width: 100%;      /* Asegura que ocupe toda la anchura */
     text-align: center; /* Centra el texto */
