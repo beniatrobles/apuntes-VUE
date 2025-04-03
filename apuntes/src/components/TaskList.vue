@@ -4,7 +4,7 @@
 
         <h3>Tareas Recibidas(Componente Padre)</h3>
         <ul>
-            <li v-for="(tarea,index) in tareasRecibidas" :key="index">{{ tarea }}
+            <li v-for="(tarea,index) in tareasRecibidas" :key="index">{{ tarea.tarea }}-{{tarea.descripcion}}
                 <button @click="eliminarTarea(index)">Eliminar</button>
             </li>
             

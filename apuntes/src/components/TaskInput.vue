@@ -2,8 +2,10 @@
     <div class="hijo">
         <h2>Tareas(Componente hijo)</h2>
         <form action="" @submit.prevent="enviarTarea">
-            <label for="">Nombre</label>
-            <input type="text" v-model="tarea" required>
+            <label for="">Tarea</label>
+            <input type="text" v-model="tarea" required><br>
+            <label for="">Descripcion</label>
+            <input type="text" v-model="descripcion" required>
             <button type="submit">Enviar</button>
         </form>
 
@@ -18,16 +20,17 @@
 import { ref } from 'vue';
 
 let tarea = ref('')
+let descripcion = ref('')
 let tareas = ref([])
 let emit = defineEmits()
 
 function enviarTarea() {
-    tareas.value.push(tarea.value)
-
-    emit('enviar-tarea', tareas.value
-    )
-
+    tareas.value.push({
+        tarea: tarea.value,descripcion:descripcion.value
+    })
+    emit('enviar-tarea', tareas.value)
     tarea.value = ''
+    descripcion.value=''
 }
 </script>
 <style></style>
