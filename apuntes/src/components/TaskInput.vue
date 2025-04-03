@@ -4,8 +4,8 @@
         <form action="" @submit.prevent="enviarTarea">
             <label for="">Tarea</label>
             <input type="text" v-model="tarea" required><br>
-            <label for="">Descripcion</label>
-            <input type="text" v-model="descripcion" required>
+            <label for="">Descripcion</label><br>
+            <textarea name="" id="" v-model="descripcion"></textarea><br>
             <button type="submit">Enviar</button>
         </form>
 

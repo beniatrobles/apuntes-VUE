@@ -4,10 +4,10 @@
 
         <h3>Tareas Recibidas(Componente Padre)</h3>
         <ul>
-            <li v-for="(tarea,index) in tareasRecibidas" :key="index">{{ tarea.tarea }}-{{tarea.descripcion}}
+            <li v-for="(tarea, index) in tareasRecibidas" :key="index">{{ tarea.tarea }}-{{ tarea.descripcion }}
                 <button @click="eliminarTarea(index)">Eliminar</button>
             </li>
-            
+
         </ul>
     </div>
 </template>
@@ -23,8 +23,8 @@ let arrayTareas = (tareas) => {
     console.log(tareasRecibidas)
 }
 
-function eliminarTarea (index){
-    tareasRecibidas.value.splice(index,1)
+function eliminarTarea(index) {
+    tareasRecibidas.value.splice(index, 1)
 }
 </script>
 <style></style>
