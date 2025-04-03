@@ -19,6 +19,9 @@
             <li class="lista5">
                 <router-link to="/hijo_padre" class="lista1">HijoPadre</router-link>
             </li>
+            <li class="lista5">
+                <router-link to="/inicio" class="lista1">VueRouter</router-link>
+            </li>
         </ul>
     </nav>
 </template>

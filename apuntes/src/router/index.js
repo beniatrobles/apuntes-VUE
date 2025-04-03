@@ -5,6 +5,9 @@ import Notas from '../views/appNotas/appNotas.vue'
 import Axios from '../views/axios/axios.vue'
 import Padre_hijo from '@/views/padre_hijo/padre_hijo.vue'
 import Hijo_padre from '@/views/hijo_padre/hijo_padre.vue'
+import Inicio from '@/views/vueRouter/inicio.vue'
+import ProductList from '@/views/vueRouter/ProductList.vue'
+import ProductDetails from '@/views/vueRouter/ProductDetails.vue'
 
 const routes = [
   {
@@ -36,6 +39,21 @@ const routes = [
     path: '/hijo_padre',
     name: 'Hijo_padre',
     component: Hijo_padre
+  },
+  {
+    path:'/inicio',
+    name:'Inicio',
+    component: Inicio
+  },
+  {
+    path: '/productList',
+    name:'ProductList',
+    component: ProductList
+  },
+  {
+    path: '/productDetails/:id',
+    name: 'ProductDetails',
+    component: ProductDetails
   }
 ]
 
