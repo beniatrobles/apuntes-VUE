@@ -4,6 +4,7 @@ import Contador from '../views/Contador.vue'
 import Notas from '../views/appNotas/appNotas.vue'
 import Axios from '../views/axios/axios.vue'
 import Padre_hijo from '@/views/padre_hijo/padre_hijo.vue'
+import Hijo_padre from '@/views/hijo_padre/hijo_padre.vue'
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: '/padre_hijo',
     name: 'Padre_hijo',
     component: Padre_hijo
+  },
+  {
+    path: '/hijo_padre',
+    name: 'Hijo_padre',
+    component: Hijo_padre
   }
 ]
 

@@ -1,20 +1,23 @@
 <template>
     <nav>
         <ul class="lista">
-            <li>
-                <router-link to="/">Inicio</router-link>
+            <li >
+                <router-link to="/" class="lista1">Inicio</router-link>
             </li>
             <li>
-                <router-link to="/contador">Contador</router-link>
+                <router-link to="/contador" class="lista1">Contador</router-link>
             </li>
-            <li>
-                <router-link to="/notas">Notas</router-link>
+            <li class="lista3">
+                <router-link to="/notas" class="lista1">Notas</router-link>
             </li>
-            <li>
-                <router-link to="/axios">Axios</router-link>
+            <li class="lista4">
+                <router-link to="/axios" class="lista1">Axios</router-link>
             </li>
-            <li>
-                <router-link to="/padre_hijo">PadreHijo</router-link>
+            <li class="lista5">
+                <router-link to="/padre_hijo" class="lista1">PadreHijo</router-link>
+            </li>
+            <li class="lista5">
+                <router-link to="/hijo_padre" class="lista1">HijoPadre</router-link>
             </li>
         </ul>
     </nav>
@@ -36,14 +39,15 @@ ul {
 .lista{
     display: flex;
 }
-
-a {
+.lista1{
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
+    
 }
 
-a:hover {
-    color: #ff6347;
+.lista1:hover{
+    color: red
 }
+
+
 </style>
