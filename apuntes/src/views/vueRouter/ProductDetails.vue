@@ -1,17 +1,19 @@
 <template>
     <Navbar />
-    <h1>Aqui estan los detalles del producto {{ id }}</h1>
+    <h1>Aquí están los detalles del producto: {{ producto.id }}</h1>
     <h3>Nombre: {{ producto.nombre }}</h3>
-    <h3>Precio:</h3>
-    <h3>Stock:</h3>
+    <h3>Precio: {{ producto.precio }}€</h3>
+    <h3>Stock: {{ producto.stock }} unidades</h3>
+    <button @click="volverLista">Volver a la lista</button>
     <Footer />
-</template>
+  </template>
 <script setup>
 import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+import {  useRoute, useRouter } from 'vue-router';
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
 
+let router = useRouter()
 let route = useRoute()
 let id = route.params.id
 
@@ -28,9 +30,14 @@ let productos = ref([
     { id: 10, nombre: 'Queso', precio: 3.49, stock: 35 }
 ]);
 
+
 let producto = ref([])
 onMounted(() => {
-    producto.value = productos.value.find((p) => p.id === id)
+    producto.value = productos.value.find((p) => p.id === Number(id)) // Convertir id a número
 })
+
+function volverLista(){
+    router.push('/productList');
+}
 </script>
 <style></style>
