@@ -8,6 +8,12 @@ import Hijo_padre from '@/views/hijo_padre/hijo_padre.vue'
 import Inicio from '@/views/vueRouter/inicio.vue'
 import ProductList from '@/views/vueRouter/ProductList.vue'
 import ProductDetails from '@/views/vueRouter/ProductDetails.vue'
+import AddProduct from '@/views/vueRouter/AddProduct.vue'
+import inicioTareas from '@/views/pinia/inicioTareas.vue'
+import verTareas from '@/views/pinia/verTareas.vue'
+import addTareas from '@/views/pinia/addTareas.vue'
+import tareasCompletadas from '@/views/pinia/tareasCompletadas.vue'
+
 
 const routes = [
   {
@@ -54,7 +60,33 @@ const routes = [
     path: '/productDetails/:id',
     name: 'ProductDetails',
     component: ProductDetails
+  },
+  {
+    path: '/addProduct',
+    name: 'AddProduct',
+    component: AddProduct
+  },
+  {
+    path: '/inicioTareas',
+    name: 'InicioTareas',
+    component: inicioTareas
+  },
+  {
+    path: '/verTareas',
+    name: 'VerTareas',
+    component: verTareas
+  },
+  {
+    path: '/addTareas',
+    name: 'AddTareas',
+    component: addTareas
+  },
+  {
+    path: '/tareasCompletadas',
+    name: 'TareasCompletadas',
+    component: tareasCompletadas
   }
+
 ]
 
 const router = createRouter({

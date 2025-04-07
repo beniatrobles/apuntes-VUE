@@ -8,6 +8,7 @@
         </li>
     </ul>
     <button @click="volver">Inicio</button>
+    <button @click="formulario">Agregar Producto</button>
     <Footer />
 </template>
 <script setup>
@@ -20,6 +21,10 @@ let router = useRouter()
 
 function volver() {
     router.push('/inicio')
+}
+
+function formulario(){
+    router.push('/addProduct')
 }
 
 function verDetalles(id){

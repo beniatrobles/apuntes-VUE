@@ -2,7 +2,7 @@
     <nav>
         <ul class="lista">
             <li >
-                <router-link to="/" class="lista1">Inicio</router-link>
+                <router-link to="/" class="lista1">Todos los ejercicios</router-link>
             </li>
             <li>
                 <router-link to="/contador" class="lista1">Contador</router-link>
@@ -21,6 +21,9 @@
             </li>
             <li class="lista5">
                 <router-link to="/inicio" class="lista1">VueRouter</router-link>
+            </li>
+            <li class="lista5">
+                <router-link to="/inicioTareas" class="lista1">Pinia</router-link>
             </li>
         </ul>
     </nav>

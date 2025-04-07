@@ -7,6 +7,8 @@
         <router-link to="/axios">Axios</router-link>
         <router-link to="/padre_hijo">PadreHijo</router-link>
         <router-link to="/hijo_padre">HijoPadre</router-link>
+        <router-link to="/inicio">VueRouter</router-link>
+        <router-link to="/inicioTareas">Pinia</router-link>
     </div>
     <Footer />
 </template>
@@ -16,8 +18,8 @@ import Footer from '../components/Footer.vue';
 </script>
 <style>
 .menu {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Esto crea 3 columnas de igual tamaño */
     gap: 15px;
     margin: 15px;
 }
