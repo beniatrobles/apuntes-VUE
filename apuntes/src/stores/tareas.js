@@ -1,23 +1,38 @@
-import TareasCompletadas from "@/views/pinia/tareasCompletadas.vue";
+
 import { defineStore } from "pinia";
 
-export const useTareasStore = defineStore('tareas',{
-    state: () =>({
+export const useTareasStore = defineStore('tareas', {
+    state: () => ({
         tareas: [
-            {id: 1,nombre:'Comprar tabaco',descripcion:'Ir al estanco a comprar tabaco.',completada: true},
-            {id: 2,nombre: 'Beber Monster',descripcion: 'Beber una monster de sabor pinia.',completada: false},
-            {id: 3,nombre: 'Decir cosas.',descripcion: 'Decir cosas de las que no tengo ni idea pero hago como que si.',completada: true},
-            {id: 4, nombre: 'No hacer casi nada', descripcion: 'No hacer casi nada y luego pretender que los demas me expliquen como se hace pero no mirar en ChatGPT', completada: false }
+            { id: 1, nombre: 'Comprar tabaco', descripcion: 'Ir al estanco a comprar tabaco.', completada: true },
+            { id: 2, nombre: 'Beber Monster', descripcion: 'Beber una monster de sabor pinia.', completada: false },
+            { id: 3, nombre: 'Decir cosas.', descripcion: 'Decir cosas de las que no tengo ni idea pero hago como que si.', completada: true },
+            { id: 4, nombre: 'No hacer casi nada', descripcion: 'No hacer casi nada y luego pretender que los demas me expliquen como se hace pero no mirar en ChatGPT', completada: false }
         ]
     }),
     getters: {
-        tareasCompletadas: (state) => state.tareas.filter((tarea)=>tarea.completada),
+        tareasCompletadas: (state) => state.tareas.filter((tarea) => tarea.completada),
         tareasTotales: (state) => state.tareas.length
     },
-    actions:{
-        addTarea(){
-            
+    actions: {
+        addTarea(nombre,descripcion,completada=false) {
+            let nuevaTarea = {
+                id: this.tareas.length +1,
+                nombre: nombre,
+                descripcion: descripcion,
+                completada: completada
+            }
+
+            this.tareas.push(nuevaTarea)
+        },
+
+        cambiarEstado(id){
+            let tarea = this.tareas.find((tarea) => tarea.id === id)
+            if(tarea) tarea.completada = !tarea.completada
+        },
+
+        borrarTarea(id){
+            this.tareas = this.tareas.filter((tarea) => tarea.id !== id)
         }
     }
-
 })

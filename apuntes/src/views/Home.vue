@@ -9,6 +9,7 @@
         <router-link to="/hijo_padre">HijoPadre</router-link>
         <router-link to="/inicio">VueRouter</router-link>
         <router-link to="/inicioTareas">Pinia</router-link>
+        <router-link to="/inicioEmpleados">Gestion_Empleados</router-link>
     </div>
     <Footer />
 </template>
@@ -21,7 +22,7 @@ import Footer from '../components/Footer.vue';
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Esto crea 3 columnas de igual tamaño */
     gap: 15px;
-    margin: 15px;
+    margin: 30px;
 }
 
 .menu a{
@@ -29,14 +30,14 @@ import Footer from '../components/Footer.vue';
     color: darkslategrey;
     background-color: blanchedalmond;
     padding: 5px;
-    width: 80px;
+    width: 130px;
+    transition: all 0.2s ease;
 }
 
 .menu a:hover{
     color: chocolate;
     background-color: aquamarine;
-    padding: 10px;
-    width: 80px;
+    transform: scaleX(1.1);
 }
 
 </style>

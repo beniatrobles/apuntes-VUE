@@ -2,7 +2,7 @@
     <Navbar />
     <h1>Notas</h1>
     <label for="">Nota</label>
-    <input type="text" v-model="nota"><br>
+    <input type="text" v-model="nota" @keyup.enter="agregarNota"><br>
     <button @click="agregarNota" class="agregar">Agregar Nota</button>
     <button @click="guardarNota()" class="guardar">Guardar Nota</button>
     <br><br>

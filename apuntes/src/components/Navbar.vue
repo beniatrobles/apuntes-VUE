@@ -25,6 +25,9 @@
             <li class="lista5">
                 <router-link to="/inicioTareas" class="lista1">Pinia</router-link>
             </li>
+            <li class="lista5">
+                <router-link to="/inicioEmpleados" class="lista1">Gestion_Empleados</router-link>
+            </li>
         </ul>
     </nav>
 </template>

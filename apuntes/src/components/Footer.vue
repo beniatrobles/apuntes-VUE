@@ -1,5 +1,5 @@
 <template>
-    <div class="footerBody">
+    <div class="footer">
         <p>Beñat Robles</p>
     </div>
 </template>
@@ -8,12 +8,13 @@
 </script>
 
 <style>
-.footerBody {
-    background-color: #333;  /* Fija el footer al fondo */
-    bottom: 0;        /* Colócalo en la parte inferior */
-    width: 100%;      /* Asegura que ocupe toda la anchura */
-    text-align: center; /* Centra el texto */
-    padding: 10px 0;   /* Da un poco de espacio al texto */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  bottom: 0;  /* Coloca el footer al fondo */
+  width: 100%;
 }
 
 p {

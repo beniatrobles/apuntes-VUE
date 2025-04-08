@@ -13,7 +13,10 @@ import inicioTareas from '@/views/pinia/inicioTareas.vue'
 import verTareas from '@/views/pinia/verTareas.vue'
 import addTareas from '@/views/pinia/addTareas.vue'
 import tareasCompletadas from '@/views/pinia/tareasCompletadas.vue'
-
+import inicioEmpleados from '@/views/gestion_empleados/inicioEmpleados.vue'
+import listaEmpleados from '@/views/gestion_empleados/listaEmpleados.vue'
+import estadisticasEmpleados from '@/views/gestion_empleados/estadisticasEmpleados.vue'
+import agregarEmpleados from '@/views/gestion_empleados/agregarEmpleados.vue'
 
 const routes = [
   {
@@ -85,6 +88,26 @@ const routes = [
     path: '/tareasCompletadas',
     name: 'TareasCompletadas',
     component: tareasCompletadas
+  },
+  {
+    path: '/inicioEmpleados',
+    name: 'InicioEmpleados',
+    component: inicioEmpleados
+  },
+  {
+    path: '/listaEmpleados',
+    name: 'ListaEmpleados',
+    component: listaEmpleados
+  },
+  {
+    path: '/estadisticasEmpleados',
+    name: 'EstadisticasEmpleados',
+    component: estadisticasEmpleados
+  },
+  {
+    path: '/agregarEmpleados',
+    name: 'AgregarEmpleados',
+    component: agregarEmpleados
   }
 
 ]
