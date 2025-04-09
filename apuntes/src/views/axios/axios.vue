@@ -10,8 +10,11 @@
     <h3>Álbum seleccionado: {{ albumSeleccionado }}</h3>
     <form action="" @submit.prevent="agregarFoto">
         <h3>Añadir Foto ficticia</h3>
+        <label for="">Titulo: </label>
         <input type="text" v-model="nuevaFoto.title" required><br>
+        <label for="">Url: </label>
         <input type="text" v-model="nuevaFoto.url" required><br>
+        <label for="">ThumbnailUrl: </label>
         <input type="text" v-model="nuevaFoto.thumbnailUrl"><br>
         <button type="submit">Añadir Foto</button>
     </form>
