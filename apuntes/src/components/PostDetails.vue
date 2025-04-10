@@ -1,6 +1,7 @@
 <template>
     <div class="hijo">
         <h2>Componente Hijo</h2>
+        <h3>{{ texto }}</h3>
         <ul v-for="post in posts" :key="post.id">
             <li>{{ post.title }}-{{ post.description }}</li>
         </ul>
@@ -10,6 +11,7 @@
 import { defineProps } from 'vue';
 let props = defineProps({
     posts: Array,
+    texto: String
 })
 
 </script>

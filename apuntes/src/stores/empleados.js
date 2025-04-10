@@ -1,31 +1,57 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
-export const useEmpleadosStore = defineStore('empleados',{
+export const useEmpleadosStore = defineStore('empleados', {
     state: () => ({
-        empleados : [],
+        empleados: [],
         texto: 'Hola buenos dias, este texto viene de un store de pinia',
-        numero: 0
+        numero: 0,
+        departamentoSeleccionado: 'Desarrollo',
     }),
-    getters:{
+    getters: {
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////Estos 5 puede preguntar/////////////////////////////////////
         totalEmpleados: (state) => state.empleados.length,
-        sumarSalarios(state){
+        empleadosFiltrados(state) {
+            if (!state.departamentoSeleccionado) {
+                return state.empleados; // Si no hay filtro, retorna todos los empleados
+            }
+            return state.empleados.filter(
+                (empleado) => empleado.department === state.departamentoSeleccionado
+            );
+        },
+        sumarSalarios(state) {
             let total = 0
-            for(let empleado of state.empleados){
+            for (let empleado of state.empleados) {
                 total += empleado.salary
             }
 
             return total
         },
+        empleadosporDept(state){
+            let empleadosPorDept = {}
+            let nombresEmpleados = {}
 
-        salarioPromedio(state){
+            for (let empleado of state.empleados){
+                if(empleadosPorDept[empleado.department]){
+                    empleadosPorDept[empleado.department] += 1
+                }else{
+                    empleadosPorDept[empleado.department] = 1
+                }
+            }
+            return empleadosPorDept
+        },
+
+        salarioPromedio(state) {
             let salarioPromedio
 
-            salarioPromedio = this.sumarSalarios/this.totalEmpleados
+            salarioPromedio = this.sumarSalarios / this.totalEmpleados
 
             return salarioPromedio
         },
 
+    //////////////////////////////////////////////////////////////////////////////////////////////
         salarioMinimo(state) {
             let salarioMinimo = Infinity  // Inicializamos con un valor muy alto
             let empleadoMinimo
@@ -36,35 +62,35 @@ export const useEmpleadosStore = defineStore('empleados',{
                 if (empleado.salary < salarioMinimo) {
                     salarioMinimo = empleado.salary  // Si el salario del empleado es menor, lo actualizamos
                     empleadoMinimo = empleado.name
-                    
+
                 }
             }
-        
+
             return { salarioMinimo, empleadoMinimo }; // Devolvemos el salario mínimo encontrado
-        
+
         },
 
-        salarioMaximo(state){
+        salarioMaximo(state) {
             let salarioMaximo = -Infinity
             let empleadoMaximo = null
 
-            for(let empleado of state.empleados){
-                if(empleado.salary > salarioMaximo){
+            for (let empleado of state.empleados) {
+                if (empleado.salary > salarioMaximo) {
                     salarioMaximo = empleado.salary
                     empleadoMaximo = empleado.name
                 }
             }
 
-            return {salarioMaximo,empleadoMaximo}
+            return { salarioMaximo, empleadoMaximo }
         },
 
-        salariosPorDept(state){
+        salariosPorDept(state) {
             let salarioPorDept = {}
 
-            for(let empleado of state.empleados){
-                if(salarioPorDept[empleado.department]){
-                    salarioPorDept[empleado.department]+=empleado.salary
-                }else{
+            for (let empleado of state.empleados) {
+                if (salarioPorDept[empleado.department]) {
+                    salarioPorDept[empleado.department] += empleado.salary
+                } else {
                     salarioPorDept[empleado.department] = empleado.salary
                 }
             }
@@ -74,25 +100,39 @@ export const useEmpleadosStore = defineStore('empleados',{
         departamentosTotales(state) {
             // Usamos un Set para almacenar los departamentos únicos
             let departamentos = new Set();
-        
+
             for (let empleado of state.empleados) {
                 departamentos.add(empleado.department);
             }
-        
+
+            // Convertimos el Set a un Array para obtener los nombres de los departamentos
+            let departamentosArray = [...departamentos];
+
             // El tamaño del Set será el número de departamentos únicos
-            return departamentos.size;
+            let cantidadDeDepartamentos = departamentosArray.length;
+
+            // Devolvemos un objeto con los nombres de los departamentos y la cantidad
+            return {
+                departamentos: departamentosArray,  // Nombres de los departamentos
+                cantidadDeDepartamentos: cantidadDeDepartamentos  // Número de departamentos únicos
+            };
         }
 
-        
+
     },
     actions: {
         async obtenerEmpleados() {
-            try{
+            try {
                 let response = await axios.get('/Empleados.json?')
                 this.empleados = response.data
-            }catch(error){
-                console.error("Error al obtener los empleados",error)
+            } catch (error) {
+                console.error("Error al obtener los empleados", error)
             }
+        },
+
+        agregarEmpleado(nuevoEmpleado){
+            nuevoEmpleado.id = this.empleados.length + 1;
+            this.empleados.push(nuevoEmpleado)
         }
     }
 })

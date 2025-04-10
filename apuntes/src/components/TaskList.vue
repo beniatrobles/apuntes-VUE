@@ -1,7 +1,5 @@
 <template>
     <div class="padre">
-        <TaskInput @enviar-tarea="arrayTareas" />
-
         <h3>Tareas Recibidas(Componente Padre)</h3>
         <div class="hola">
             <ul>
@@ -11,6 +9,7 @@
 
             </ul>
         </div>
+        <TaskInput @enviar-tarea="arrayTareas" />
     </div>
 </template>
 <script setup>

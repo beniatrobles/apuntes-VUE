@@ -93,6 +93,7 @@ let agregarFoto = async () => {
         thumbnailUrl: nuevaFoto.value.thumbnailUrl
     }
 
+
     let response = await axios.post(`https://jsonplaceholder.typicode.com/photos`, foto)
 
     fotos.value.push(response.data)

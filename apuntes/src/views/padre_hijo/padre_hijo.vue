@@ -1,6 +1,6 @@
 <template>
     <Navbar />
-    <PostList :posts="posts"/>
+    <PostList/>
     <Footer />
 </template>
 <script setup>

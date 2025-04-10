@@ -46,6 +46,7 @@ let tareasStore = useTareasStore()
     color: black;
     background-color: cadetblue;
     padding: 20px;
+    border-radius: 15px;
 }
 
 .router:hover{
