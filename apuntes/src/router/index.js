@@ -17,6 +17,7 @@ import inicioEmpleados from '@/views/gestion_empleados/inicioEmpleados.vue'
 import listaEmpleados from '@/views/gestion_empleados/listaEmpleados.vue'
 import estadisticasEmpleados from '@/views/gestion_empleados/estadisticasEmpleados.vue'
 import agregarEmpleados from '@/views/gestion_empleados/agregarEmpleados.vue'
+import inicioTrivial from '@/views/trivial/inicioTrivial.vue'
 
 const routes = [
   {
@@ -108,6 +109,11 @@ const routes = [
     path: '/agregarEmpleados',
     name: 'AgregarEmpleados',
     component: agregarEmpleados
+  },
+  {
+    path: '/inicioTrivial',
+    name: 'InicioTrivial',
+    component: inicioTrivial
   }
 
 ]

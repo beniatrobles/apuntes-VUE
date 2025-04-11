@@ -10,6 +10,7 @@
         <router-link to="/inicio">VueRouter</router-link>
         <router-link to="/inicioTareas">Pinia</router-link>
         <router-link to="/inicioEmpleados">Gestion_Empleados</router-link>
+        <router-link to="/inicioTrivial">Trivial</router-link>
     </div>
     <Footer />
 </template>
