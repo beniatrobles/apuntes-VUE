@@ -7,6 +7,11 @@
 
 El objetivo de este ejercicio es desarrollar una **aplicación de trivial** en la que los usuarios puedan personalizar la experiencia de juego seleccionando la **categoría**, el **número de preguntas** y la **dificultad**. Usando **Vue.js 3**, **Vue Router** y **Pinia**, los estudiantes gestionarán la navegación, el estado global y la interacción con la **[API de Open Trivia Database](https://opentdb.com/api_config.php)** para obtener preguntas personalizadas. Además, aprenderán a construir dinámicamente la URL de la API según las elecciones del usuario.
 
+
+https://opentdb.com/api.php?amount=10&category=15&difficulty=easy&type=multiple
+
+
+
 ### **Requisitos del ejercicio:**
 
 1.  **Vue Router** para gestionar la navegación entre las diferentes páginas de la aplicación.
