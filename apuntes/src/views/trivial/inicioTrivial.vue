@@ -1,12 +1,12 @@
 <template>
     <Navbar />
-    <h1>TRIVIAL</h1>
+    <h1></h1>
     <h2>Selecciona cada una de los apartados para poder comenzar el juego</h2>
     <form action="" @submit.prevent="obtenerPreguntas()">
         <label for="">Elige la categoria: </label><br>
         <select name="" id="" v-model="categoriaSeleccionada">
             <option v-for="categoria in categorias" :key="categoria.id" :value="categoria.id">{{ categoria.name
-                }}</option>
+            }}</option>
         </select><br><br>
         <label for="">Cantidad de preguntas: </label><br>
         <input type="number" v-model="numeroPreguntas" min="1" max="10"><br><br>
@@ -25,8 +25,8 @@
     <div v-for="pregunta in preguntas">
         <h3 v-html="pregunta.question"></h3>
         <ul>
-            <li v-for="respuesta in mezclarRespuestas(pregunta)" >
-                {{ respuesta }}
+            <li v-for="respuesta in mezclarRespuestas(pregunta)">
+                <button v-html="respuesta" @click="comprobarRespuesta(respuesta,pregunta)"></button>
             </li>
         </ul>
     </div>
@@ -45,6 +45,10 @@ let respuestas = ref([])
 let categoriaSeleccionada = ref(null)
 let numeroPreguntas = ref(5)
 let dificultad = ref('')
+
+let respuestasCorrectas = ref(0)
+let respuestasIncorrectas = ref(0)
+let respuestaRespondida = ref(false)
 
 let obtenerCategorias = async () => {
     try {
@@ -67,9 +71,22 @@ let obtenerPreguntas = async () => {
 }
 
 
-function mezclarRespuestas (pregunta){
-    respuestas = [...pregunta.incorrect_answers,pregunta.correct_answer]
+function mezclarRespuestas(pregunta) {
+    respuestas = [...pregunta.incorrect_answers, pregunta.correct_answer]
     return respuestas.sort(() => Math.random() - 0.5);
+}
+
+function comprobarRespuesta(respuesta,pregunta){
+    respuestaRespondida.value = true
+    if(respuesta===pregunta.correct_answer){
+        console.log("respuesta correcta")
+        respuestasCorrectas.value += 1
+        console.log(respuestasCorrectas.value)
+    }else{
+        console.log("respuesta incorrecta")
+        respuestasIncorrectas.value +=1
+        console.log(respuestasIncorrectas.value)
+    }
 }
 
 
