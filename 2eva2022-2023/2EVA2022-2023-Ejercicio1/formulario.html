@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+    <style>
+        .bordeRojo {
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" id="form">
+        <h1>formulario ejercicio1</h1>
+        <label for="">Matricula</label>
+        <input type="text" id="matricula" name="matricula">
+        <span id="errorMatricula" style="color: red;"></span><br><br>
+        <label for="">Tipo</label>
+        <select name="tipo" id="tipo">
+            <option value="motocicleta">Motocicleta</option>
+            <option value="automovil">Automovil</option>
+            <option value="camion">Camion</option>
+        </select><br><br>
+        <button type="submit">Mostrar</button>
+    </form>
+
+    <img src="./img/menorEdad.jpg" alt="Menor de edad" width="80" id="menorEdad">
+    <img src="./img/mayorEdad.jpg" alt="Mayor de edad" width="80" id="mayorEdad">
+    <img src="./img/particular.jpg" alt="Particular" width="80" id="particular">
+    <img src="./img/profesional.jpg" alt="Profesional" width="80" id="profesional">
+    <img src="./img/rigido.jpg" alt="Rigido" width="80" id="rigido" >
+    <img src="./img/articulado.jpg" alt="Articulado" width="80" id="articulado">
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script src="validar.js"></script>
