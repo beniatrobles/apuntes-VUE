@@ -1,47 +1,47 @@
-let pabellones = ["Arrupe", "Areitza", "Aztarain", "Guturbai"]
+let pabellones = ["Arrupe","Areitza","Aztarain","Guturbai"]
 
 
-class Servicio {
-    constructor(servicio = "", pabellon = 0, mostrar = true) {
+class Servicio{
+    constructor(servicio = "", pabellon = 0,mostrar = true){
         this._servicio = servicio
         this._pabellon = pabellon
         this._mostrar = mostrar
-
+        
     }
 
-    get servicio() {
+    get servicio(){
         return this._servicio;
     }
 
-    get pabellon() {
+    get pabellon(){
         return this._pabellon
     }
 
-    get mostrar() {
+    get mostrar(){
         return this._mostrar
     }
 
-    set servicio(servicio) {
+    set servicio(servicio){
         this._servicio = servicio
     }
 
-    set pabellon(pabellon) {
-        if (pabellon >= 0 && pabellon < pabellones.length) {
+    set pabellon(pabellon){
+        if(pabellon >=0 && pabellon< pabellones.length){
             this._pabellon = pabellon
         }
     }
 
-    set mostrar(mostrar) {
+    set mostrar(mostrar){
         this._mostrar = mostrar
     }
 
 
-    mostrar() {
+    mostrar(){
         let nombrePabellon = pabellones[this._pabellon]
         let visibilidad = ""
-        if (this._mostrar === true) {
+        if(this._mostrar === true){
             visibilidad = "Visible"
-        } else {
+        }else{
             visibilidad = "No visible"
         }
 
@@ -50,3 +50,8 @@ class Servicio {
     
 }
 
+export {Servicio}
+
+// let servicio1 = new Servicio("Oncologia",1,true)
+
+// console.log(servicio1.mostrar())
