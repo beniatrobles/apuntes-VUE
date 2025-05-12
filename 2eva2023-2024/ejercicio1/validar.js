@@ -6,11 +6,11 @@ let pabellon = document.getElementById("pabellon")
 let mostrar = document.getElementById("mostrar")
 
 function validarServicio(servicio){
-    let validacion = /^[a-zA-Z0-9-]+$/;
-
+    let validacion = /^[a-zA-Z0-9_]+$/
     if(validacion.test(servicio)){
-        return true;
+        return true
     }else{
-        return alert("El nombre debe contener solo letras, números o guión bajo.")
+        return false
     }
 }
+
