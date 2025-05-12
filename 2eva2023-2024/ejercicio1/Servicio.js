@@ -1,5 +1,3 @@
-let pabellones = ["Arrupe","Areitza","Aztarain","Guturbai"]
-
 
 class Servicio{
     constructor(servicio = "", pabellon = 0,mostrar = true){
@@ -50,7 +48,7 @@ class Servicio{
     
 }
 
-export {Servicio}
+let pabellones = ["Arrupe","Areitza","Aztarain","Guturbai"]
 
 // let servicio1 = new Servicio("Oncologia",1,true)
 

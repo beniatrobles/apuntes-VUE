@@ -1,8 +1,3 @@
-import { Servicio } from "./Servicio"
-
-
-let pabellones = ["Arrupe", "Areitza", "Aztarain", "Guturbai"]
-
 
 let servicio = document.getElementById("servicio")
 let pabellon = document.getElementById("pabellon")
@@ -42,7 +37,8 @@ formulario.addEventListener("submit", (event) => {
     }else{
         alert ("Formulario correcto")
         let servicioNuevo = new Servicio(servicioTexto,pabellonTexto,mostrarTexto)
-        console.log(servicioNuevo)
+        console.log(servicioNuevo.mostrar())
+        
 
     }
 
