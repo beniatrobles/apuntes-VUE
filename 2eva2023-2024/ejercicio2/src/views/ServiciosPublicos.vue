@@ -1,9 +1,6 @@
 <template>
     <h1>todos los servicios</h1>
     <Basurto />
-
-
-
     <table>
         <thead>
             <tr>
@@ -23,14 +20,10 @@
                         <span v-if="esFavorito(servicio)" @click="quitarFavoritos(servicio)">No FAV</span>
                         <span v-else @click="añadirFavoritos(servicio)">FAV</span>
                     </td>
-
                 </tr>
             </template>
         </tbody>
     </table>
-
-
-
 </template>
 <script setup>
 import Basurto from '@/components/Basurto.vue'
@@ -39,7 +32,6 @@ import { ref, onMounted } from 'vue'
 
 let servicios = ref( [] )
 let favoritos = ref( [] )
-
 
 
 let obtenerServicios = async () =>
