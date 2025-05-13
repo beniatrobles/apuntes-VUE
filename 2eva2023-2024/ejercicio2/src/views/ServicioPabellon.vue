@@ -10,7 +10,7 @@
 
     <div v-if="entradaSeleccionada && serviciosFiltrados.length > 0">
         <ul>
-            <li v-for="servicio in serviciosFiltrados" :key="servicio.id">
+            <li v-for="servicio in serviciosFiltrados">
                 {{ servicio.SERVICIO }} <!-- Suponiendo que cada servicio tiene un nombre -->
             </li>
         </ul>
