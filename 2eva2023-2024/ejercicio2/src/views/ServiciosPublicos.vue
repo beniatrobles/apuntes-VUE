@@ -1,6 +1,9 @@
 <template>
     <h1>todos los servicios</h1>
     <Basurto />
+    <Cuadro />
+
+    <input type="text" v-model="busqueda" placeholder="Buscar servicio..." />
     <table>
         <thead>
             <tr>
@@ -11,14 +14,14 @@
             </tr>
         </thead>
         <tbody>
-            <template v-for="(servicio, index) in servicios" :key="index">
+            <template v-for="(servicio, index) in serviciosFiltrados" :key="index">
                 <tr v-if="servicio.MOSTRAR === 1">
                     <td>{{ servicio.ICONO }}</td>
                     <td>{{ servicio.SERVICIO }}</td>
                     <td>{{ servicio.ENTRADA }}</td>
                     <td>
-                        <span v-if="esFavorito(servicio)" @click="quitarFavoritos(servicio)">No FAV</span>
-                        <span v-else @click="añadirFavoritos(servicio)">FAV</span>
+                        <span v-if="esFavorito(servicio)" @click="favoritosStore.quitarFavoritos(servicio)">No FAV</span>
+                        <span v-else @click="favoritosStore.añadirFavoritos(servicio)">FAV</span>
                     </td>
                 </tr>
             </template>
@@ -27,11 +30,18 @@
 </template>
 <script setup>
 import Basurto from '@/components/Basurto.vue'
+import Cuadro from '@/components/CuadroFavoritos.vue'
 import axios from 'axios'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
+import {useFavoritosStore} from '@/stores/favoritos'
 
 let servicios = ref( [] )
-let favoritos = ref( [] )
+
+
+let busqueda = ref( '' )
+
+let favoritosStore = useFavoritosStore()
+
 
 
 let obtenerServicios = async () =>
@@ -46,23 +56,24 @@ let obtenerServicios = async () =>
     }
 }
 
-function añadirFavoritos( servicio )
+
+// Computed para filtrar por nombre del servicio
+const serviciosFiltrados = computed( () =>
 {
-    favoritos.value.push( servicio )
-    console.log( favoritos )
-}
+    return servicios.value.filter( servicio =>
+        servicio.SERVICIO.toLowerCase().includes( busqueda.value.toLowerCase() )
+    )
+} )
+
+
+
 
 function esFavorito( servicio )
 {
-    return favoritos.value.includes( servicio )
+    return favoritosStore.favoritos.includes( servicio )
 }
 
-function quitarFavoritos(servicio){
 
-    let index = favoritos.value.indexOf(servicio)
-    favoritos.value.splice(index,1)
-    console.log( favoritos )
-}
 
 onMounted( () =>
 {
