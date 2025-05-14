@@ -24,10 +24,17 @@ let premios = [
     "Critics' Choice Awards"
 ];
 
+
+let premiosPeliculas = []
+
 let peliculasInput = document.getElementById("pelicula")
 let premiosInput = document.getElementById("premio")
 
+peliculasInput.disabled = true
+
 let formulario = document.getElementById("formulario")
+
+let resultado = document.getElementById("resultado")
 
 let contador = 3
 
@@ -36,11 +43,11 @@ function cargarDatos() {
     let indicePelicula = Math.floor(Math.random() * peliculas.length);
     let peliculaAleatoria = peliculas[indicePelicula];
 
+
     // Muestra la película aleatoria en el input
     peliculasInput.value = peliculaAleatoria;
 
-    // Imprime el índice de la película en la consola
-
+    
 
     // Llenar el select con los premios
     premios.forEach((premio, index) => {
@@ -54,11 +61,11 @@ function cargarDatos() {
     console.log(indicePelicula);
     console.log(peliculaAleatoria);
 
-    // Obtener el índice del premio seleccionado
-    premiosInput.addEventListener('change', function () {
-        let indicePremioSeleccionado = premiosInput.value;  // El valor de la opción seleccionada
-        console.log(indicePremioSeleccionado);
-    });
+    // // Obtener el índice del premio seleccionado
+    // premiosInput.addEventListener('change', function () {
+    //     let indicePremioSeleccionado = premiosInput.value;  // El valor de la opción seleccionada
+    //     console.log(indicePremioSeleccionado);
+    // });
 
     // Guardar el índice de la película seleccionada en el formulario
     peliculasInput.setAttribute("indicePelicula", indicePelicula);
@@ -68,7 +75,11 @@ function cargarDatos() {
 window.onload = cargarDatos;
 
 formulario.addEventListener("submit", (e) => {
+    
     e.preventDefault()
+
+    peliculasInput.disabled = false
+
 
     console.log(peliculasInput.value)
     console.log(premiosInput.value)
@@ -78,16 +89,33 @@ formulario.addEventListener("submit", (e) => {
     
         if (indicePelicula === indicePremio) {
             alert("Acertado")
+
+            let peliculaN = peliculasInput.value
+            let premioN = premios[parseInt(premiosInput.value)];
+
+            let peliculaPremio = new PeliculaPremios(peliculaN,premioN)
+
+            premiosPeliculas.push(peliculaPremio)
+
+            console.log(premiosPeliculas)
+
+            resultado.innerHTML = peliculaPremio.toString()
         } else {
             contador--
             alert(`No acertado. Te quedan ${contador} intentos.`)
         }
 
         if (contador === 0) {
+
             alert("Fin del juego")
+            peliculasInput.disabled = true
+            peliculasInput.style.color = "red"
+            
+
         }
 
 
 
 
 })
+
