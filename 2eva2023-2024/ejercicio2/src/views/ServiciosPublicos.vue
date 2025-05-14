@@ -20,8 +20,8 @@
                     <td>{{ servicio.SERVICIO }}</td>
                     <td>{{ servicio.ENTRADA }}</td>
                     <td>
-                        <span v-if="esFavorito(servicio)" @click="favoritosStore.quitarFavoritos(servicio)">No FAV</span>
-                        <span v-else @click="favoritosStore.añadirFavoritos(servicio)">FAV</span>
+                        <span v-if="esFavorito(servicio)" @click="favoritosStore.quitarFavoritos(servicio)">❤️</span>
+                        <span v-else @click="favoritosStore.añadirFavoritos(servicio)">💟</span>
                     </td>
                 </tr>
             </template>

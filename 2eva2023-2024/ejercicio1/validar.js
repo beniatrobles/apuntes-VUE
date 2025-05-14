@@ -41,9 +41,6 @@ formulario.addEventListener("submit", (event) => {
         
 
     }
-
-    
-    
 })
 
 
