@@ -3,5 +3,7 @@
 </script>
 
 <template>
-  <h1>Hola</h1>
+  <img src="../assets/logoTX.png" alt="" width="100"><br>
+  <span>BIenvenidos al examen</span><br>
+  <span>Ongi etorri gora eta</span>
 </template>
