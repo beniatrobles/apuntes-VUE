@@ -11,12 +11,14 @@
 
 
 <br>
-   <select v-model="festividadesStore.municipioSeleccionado" id="municipio">
+   <!-- <select v-model="festividadesStore.municipioSeleccionado" id="municipio">
     <option value="">Todos</option>
     <option v-for="municipio in festividadesStore.municipios" :key="municipio" :value="municipio">
       {{ municipio }}
     </option>
-  </select>
+  </select> -->
+
+  <FiltradoFestividades/>
 
   <!-- <h2>Total Festividades: {{ festividadesStore.totalfestividades }}</h2>
   <h2>Total Asistidos: {{ festividadesStore.totalAsistidos }}</h2> -->
@@ -51,6 +53,7 @@ import { ref, computed} from 'vue'
 import { onMounted } from 'vue'
 import { useFestividadesStore } from '@/stores/festividadesStore'
 import router from '@/router'
+import FiltradoFestividades from '@/components/FiltradoFestividades.vue'
 
 const festividadesStore = useFestividadesStore()
 
