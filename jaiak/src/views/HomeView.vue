@@ -70,7 +70,7 @@ function verDetalles(festividad){
 }
 
 
-///fUNCIN¡ON QUE LO BUSCA (LOS NOMBRES DE EL ARRAY PUEDEN CAMBIAR)
+///fUNCIN¡ON QUE LO BUSCA CAMPO DE TEXTO (LOS NOMBRES DE EL ARRAY PUEDEN CAMBIAR)
 // const festividadesFiltradasPorNombre = computed(() => {
 //   return festividadesStore.festividadesFiltradas.filter(f =>
 //     f.nombre.toLowerCase().includes(busqueda.value.toLowerCase())
