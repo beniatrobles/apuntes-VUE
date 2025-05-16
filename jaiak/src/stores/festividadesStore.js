@@ -46,7 +46,40 @@ export const useFestividadesStore = defineStore( 'festividades', {
             {
                 const fechaFestividad = new Date( festividad.fecha )
                 return fechaFestividad > hoy
-            } ).sort((a, b) => new Date(a.fecha) - new Date(b.fecha))
+            } ).sort( ( a, b ) => new Date( a.fecha ) - new Date( b.fecha ) )
+        },
+
+        municipiosConMultiples( state )
+        {
+            const conteo = {}
+            const resultado = []
+
+            // Contar cuántas festividades hay por municipio
+            for ( let i = 0; i < state.festividades.length; i++ )
+            {
+                const municipio = state.festividades[ i ].municipio
+                if ( conteo[ municipio ] )
+                {
+                    conteo[ municipio ]++
+                } else
+                {
+                    conteo[ municipio ] = 1
+                }
+            }
+
+            // Recorrer el objeto y agregar municipios con más de una festividad
+            for ( let municipio in conteo )
+            {
+                if ( conteo[ municipio ] > 1 )
+                {
+                    resultado.push( municipio )
+                }
+            }
+
+            // Ordenar alfabéticamente
+            resultado.sort()
+
+            return resultado
         }
     },
     actions: {
