@@ -33,7 +33,7 @@
     </thead>
     <tbody>
       <tr v-for="festividad in festividadesStore.festividadesFiltradas" :key="festividad.id">
-        <td>{{ festividad.nombre }}</td>
+        <td :class="{asistido: festividad.asistido}">{{ festividad.nombre }}</td>
         <td>{{ festividad.fecha }}</td>
         <td>{{ festividad.municipio }}</td>
         <td>
@@ -77,3 +77,10 @@ function verDetalles(festividad){
 //   )
 // })
 </script>
+
+<style scoped>
+.asistido{
+  color: green;
+}
+
+</style>
