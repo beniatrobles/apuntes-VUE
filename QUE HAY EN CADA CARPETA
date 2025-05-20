@@ -1,0 +1,66 @@
+1final2022-2023
+    ejer1 javascript
+        usar rand para coger algo random
+        llenar un select con datos
+        comparar 2 arrays
+        usar Clases
+
+    ejer2 vue
+        login
+        calcular total 
+        calcular unidades si se repiten al meterlo en un arrays
+
+        
+2eva 2022-2023
+    ejer1 javascript
+        validacion y evento blur
+        evento change
+        queryselector
+        evento click
+        evento submit
+        aplicar estilos con javascript
+
+    ejer2  vue
+        filtrar tabla combobox
+        borrar 
+        añadir objeto
+
+    ejer3 vue
+        rutas
+        añadir al arrays
+        cambiar un input de disable a no disable (estilos)
+        focus
+        key up
+        blur
+        validar en vue y errores si no se validan
+
+2eva 2023-2024
+    ejercicio 1
+        validaciones
+        usar clases / metodo mostrar
+
+    ejercicio 2
+        store
+        rutas
+        cambiar icono favoritos color con v-if
+        buscar algo input ***NO SELECT***
+        filtrar tabla con select
+
+
+apuntes
+    componentes padre-hijo
+    componentes hijpo-padre
+    pinia ***USO DE CLASES PARA CAMBIAR LOS ESTILOS DE UN ELEMENTO***
+    gestion empledados-- muchas formas de filtrar en store(sumastotales, minimos,maximos...)
+
+
+Jaiak
+    Este es el mas impratante (esperemos) para mirar.
+ 
+
+        
+
+
+
+
+
